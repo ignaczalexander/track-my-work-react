@@ -1,0 +1,25 @@
+@import '../../assets/css/colors.scss';
+@import '../../assets/css/constants.scss';
+.container {
+  padding: 1.5rem;
+  max-width: $max_content_width;
+  margin: auto;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  h1 {
+    font-size: 20px;
+    margin: 0;
+  }
+}
+.icon_chevron {
+  path {
+    fill: $light_gray_text;
+    &:hover {
+      fill: $primary_text;
+    }
+  }
+}

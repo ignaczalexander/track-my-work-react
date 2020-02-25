@@ -1,0 +1,35 @@
+@import '../../../assets/css/colors.scss';
+.container {
+  padding: 0 0.25rem;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  &:hover {
+    svg path {
+      fill: $primary_text;
+    }
+  }
+}
+.icon_chevron {
+  path {
+    fill: $light_gray_text;
+  }
+}
+.dropDown {
+  position: absolute;
+  right: 0;
+  white-space: nowrap;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 0.5rem;
+      &:hover {
+        background-color: $light_gray_bg;
+      }
+    }
+  }
+}

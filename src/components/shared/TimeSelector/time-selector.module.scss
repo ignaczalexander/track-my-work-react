@@ -1,0 +1,73 @@
+@import '../../../assets/css/colors.scss';
+$arrow_base: 7px;
+$arrow_size: 10px;
+.container {
+  font-size: 28px;
+  padding: 0.5rem 0;
+  display: flex;
+  transition: all 0.15s ease-out;
+  cursor: pointer;
+  position: relative;
+  right: 6px;
+  .colon {
+    padding: 0.5rem 0;
+  }
+  &.isOpen {
+    transform: scale(2);
+    cursor: default;
+  }
+}
+.hour_container,
+.min_container {
+  position: relative;
+  padding: 0.5rem 0;
+}
+.min_control_up,
+.hour_control_up,
+.hour_control_down,
+.min_control_down {
+  position: absolute;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  right: 50%;
+  transform: translateX(50%);
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 0;
+}
+.hour_control_up,
+.min_control_up {
+  border-left: $arrow_base solid transparent;
+  border-right: $arrow_base solid transparent;
+  border-bottom: $arrow_size solid $lightest_gray;
+  &:hover {
+    border-bottom-color: $lighter_gray_text;
+  }
+}
+.hour_control_down,
+.min_control_down {
+  border-left: $arrow_base solid transparent;
+  border-right: $arrow_base solid transparent;
+  border-top: $arrow_size solid $lightest_gray;
+  &:hover {
+    border-top-color: $lighter_gray_text;
+  }
+}
+.min_control_up {
+  //   bottom: 100%;
+  top: 0;
+}
+.min_control_down {
+  //   top: 100%;
+  bottom: 0;
+}
+.hour_control_down {
+  bottom: 0;
+  //   top: 100%;
+}
+.hour_control_up {
+  top: 0;
+  //   bottom: 100%;
+}

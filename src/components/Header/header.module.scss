@@ -1,0 +1,23 @@
+@import '../../assets/css/colors.scss';
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.logo_container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  img {
+    width: 10rem;
+  }
+}
+.nav_container {
+  .nav_link {
+    margin: 0 0.5rem;
+  }
+}

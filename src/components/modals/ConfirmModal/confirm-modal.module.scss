@@ -1,0 +1,42 @@
+@import '../../../assets/css/colors.scss';
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  padding-bottom: 1.5rem;
+  border-radius: 4px;
+  background-color: white;
+  color: white;
+  min-width: 250px;
+  text-align: center;
+  //   box-shadow: 0 3px 6px $shadow;
+  button {
+    border-radius: 3px;
+    font-size: 16px;
+    height: 2.25rem;
+  }
+  h1 {
+    margin: 0;
+    margin-bottom: 1.75rem;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .btn_submit {
+    width: 100%;
+    margin-bottom: 0.25rem;
+    background-color: $green_text;
+    color: white;
+  }
+  .btn_cancel {
+    color: $primary_text;
+  }
+}
+.enter.enter_active {
+  background-color: blue;
+}
+.leave.leave_active {
+  transition: all 3s;
+  transform: translate(-50%, 180%);
+  background-color: red;
+}

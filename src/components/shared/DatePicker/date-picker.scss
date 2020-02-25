@@ -1,0 +1,98 @@
+@import '../../../assets/css/colors.scss';
+.react-datepicker-wrapper {
+  margin-bottom: 0;
+}
+div.react-datepicker
+  .react-datepicker__month-container
+  .react-datepicker__header {
+  background-color: white;
+  border-bottom: none;
+  padding-top: 0;
+}
+.react-datepicker__day-names {
+  background-color: white;
+  color: $primary_text;
+  font-weight: 600;
+}
+.react-datepicker__day-name {
+  color: $primary_text;
+}
+.react-datepicker__current-month {
+  padding: 1rem 0;
+  margin-bottom: 0.25rem;
+  background-color: $light_gray_bg;
+  color: $primary_text;
+}
+div.react-datepicker {
+  border-radius: 0;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  .react-datepicker__triangle {
+    border-bottom-color: $light_gray_bg !important;
+    &::before {
+      border-bottom-color: $light_gray_bg !important;
+    }
+  }
+}
+.react-datepicker__triangle {
+  // display: none;
+}
+.react-datepicker__navigation {
+  top: 18px;
+  &--next {
+    border-left-color: $lighter_gray_text;
+    &:hover {
+      border-left-color: $light_gray_text;
+    }
+  }
+  &--previous {
+    border-right-color: $lighter_gray_text;
+    &:hover {
+      border-right-color: $light_gray_text;
+    }
+  }
+}
+.react-datepicker__day {
+  margin: 1px;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  color: $primary_text;
+  &:hover {
+    border-radius: 0;
+  }
+  &--outside-month {
+    color: $light_gray_text;
+  }
+  &--keyboard-selected,
+  &--selected {
+    color: white;
+    border-radius: 0;
+    background-color: $green_text;
+    &:hover {
+      background-color: $green_text;
+    }
+  }
+  &--disabled {
+    color: $lighter_gray_text;
+  }
+}
+
+.react-datepicker__month {
+  margin: 0 0.5rem 0.5rem 0.5rem;
+}
+.react-datepicker-popper {
+  &[data-placement^='bottom-start'] {
+    .react-datepicker__triangle {
+      // display: none;
+      left: 50px;
+    }
+  }
+  &[data-placement^='bottom-end'] {
+    .react-datepicker__triangle {
+      // display: none;
+      left: 190px;
+    }
+  }
+}

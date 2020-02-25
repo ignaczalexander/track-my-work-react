@@ -1,0 +1,76 @@
+@import '../../assets/css/colors.scss';
+@import '../../assets/css/constants.scss';
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  padding-top: 3rem;
+  max-width: $max_content_width;
+  margin: auto;
+  h1 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 1.5rem;
+  }
+  a {
+    font-size: 12px;
+    color: $lighter_gray_text;
+    margin-top: 0.5rem;
+    &:hover {
+      color: $light_gray_text;
+      text-decoration: underline;
+    }
+  }
+  form {
+    width: 100%;
+  }
+}
+.input_container {
+  margin-bottom: 1rem;
+  position: relative;
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border: 1px solid $lightest_gray;
+    border-radius: 2px;
+    padding: 0.5rem;
+    &::placeholder {
+      font-size: 12px;
+      color: $light_gray_text;
+    }
+  }
+}
+.btn_login {
+  width: 100%;
+  background-color: $green_text;
+  color: white;
+  font-size: 16px;
+  height: 34px;
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
+}
+.btn_fb {
+  font-size: 16px;
+  width: 100%;
+  background-color: #3b5998;
+  color: white;
+  height: 34px;
+  border-radius: 2px;
+}
+.error {
+  font-size: 12px;
+  color: $error_red;
+  animation: appear 0.25s ease-out;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

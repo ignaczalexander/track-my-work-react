@@ -1,0 +1,76 @@
+@import '../../assets/css/colors.scss';
+@import '../../assets/css/constants.scss';
+.container {
+  padding: 1.5rem 1rem;
+  max-width: $max_content_width;
+  margin: auto;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  h1 {
+    font-size: 20px;
+    margin: 0;
+  }
+}
+.total_container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  .total_text {
+    color: $light_gray_text;
+    margin-bottom: -0.5rem;
+  }
+  .total_number,
+  .total_number span {
+    font-size: 42px;
+    color: $green_text;
+  }
+}
+.shift_list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.list_item {
+  background-color: $light_gray_bg;
+  position: relative;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .hours {
+    font-size: 22px;
+    margin-right: 2rem;
+  }
+}
+.date_container {
+  .date {
+    font-size: 14px;
+    color: $light_gray_text;
+  }
+  .time {
+    font-size: 20px;
+  }
+}
+.empty {
+  color: $lighter_gray_text;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.icon_cross {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  &:hover {
+    svg path {
+      fill: $lighter_gray_text;
+    }
+  }
+  svg path {
+    fill: $lightest_gray;
+  }
+}

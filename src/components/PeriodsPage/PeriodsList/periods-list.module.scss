@@ -1,0 +1,40 @@
+@import '../../../assets/css/colors.scss';
+.container {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.year_section {
+  margin-bottom: 1rem;
+  h2 {
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 0.25rem;
+    font-weight: 400;
+    color: $light_gray_text;
+  }
+}
+.period_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.list_item {
+  a {
+    background-color: $light_gray_bg;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.total {
+  font-size: 24px;
+}
+.empty {
+  color: $lighter_gray_text;
+  text-align: center;
+  margin-top: 1.5rem;
+}

@@ -1,0 +1,20 @@
+@import '../../../assets/css/colors.scss';
+.container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  .day {
+    font-size: 32px;
+    margin-right: 0.25rem;
+  }
+  .rest_container {
+    line-height: 14px;
+    .month_year {
+      font-size: 14px;
+    }
+    .day {
+      font-size: 12px;
+      color: $light_gray_text;
+    }
+  }
+}
