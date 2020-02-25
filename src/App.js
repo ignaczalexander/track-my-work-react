@@ -27,8 +27,6 @@ Modal.setAppElement('#root');
 class App extends Component {
   
   render() {
-    console.log(process.env);
-
     return (
       <Provider store={store}>
         <Router>
