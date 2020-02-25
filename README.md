@@ -1,6 +1,6 @@
 # TrackMyWork
 TrackMyWork is a React web application that can be used to keep track of work shifts and hours. </br>
-The app is deployed to Heroku and can be accessed on https://tmwapp.herokuapp.com
+The app is deployed to Heroku and can be accessed [here](https://tmwapp.herokuapp.com).
 
 ## Technologies used
 
