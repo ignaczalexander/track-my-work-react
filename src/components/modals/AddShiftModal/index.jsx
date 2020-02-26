@@ -16,10 +16,15 @@ const AddShiftModal = props => {
   const [startDate, setStartDate] = useState(new Date());
   const [error, setError] = useState('');
   const [endDate, setEndDate] = useState(new Date());
-  const [startTime, setStartTime] = useState(moment().format());
+  const [startTime, setStartTime] = useState(
+    moment()
+      .minute(0)
+      .format()
+  );
   const [endTime, setEndTime] = useState(
     moment()
       .add(1, 'hours')
+      .minute(0)
       .format()
   );
   const handleStartDateChange = date => {
@@ -155,7 +160,6 @@ AddShiftModal.propTypes = {
 const mapStateToProps = state => ({
   period: state.periods.period
 });
-export default connect(
-  mapStateToProps,
-  { createShift, removeModal }
-)(AddShiftModal);
+export default connect(mapStateToProps, { createShift, removeModal })(
+  AddShiftModal
+);
