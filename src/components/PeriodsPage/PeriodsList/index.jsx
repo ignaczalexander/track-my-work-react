@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -8,16 +8,33 @@ import Spinner from '../../common/Spinner';
 import utils from '../../../utils';
 import { getPeriods } from '../../../actions/periodActions';
 
+function usePrevious(value) {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
+}
+
 const PeriodsList = props => {
   const { getPeriods, periods } = props;
+  const prevIsAuth = usePrevious(props.isAuthenticated)
+
   useEffect(() => {
-    getPeriods(true);
+    if (!props.isAuthenticated && prevIsAuth) {
+      getPeriods()
+    }
+  }, [props.isAuthenticated])
+
+  useEffect(() => {
+    getPeriods();
   }, [getPeriods]);
+
   if (props.loading || !periods) {
     return <Spinner />;
   }
   if (!periods.length) {
-    return <div className={styles.empty}>There are no shifts to show</div>;
+    return <div className={styles.empty}>There are no work periods to show</div>;
   }
   const categorizedPeriods = utils.persePeriods(periods);
   return (
@@ -50,12 +67,14 @@ const PeriodsList = props => {
 };
 const mapStateToProps = state => ({
   periods: state.periods.periods,
-  loading: state.periods.loading
+  loading: state.periods.loading,
+  isAuthenticated: state.auth.isAuthenticated
 });
 PeriodsList.propTypes = {
   periods: PropTypes.array,
   loading: PropTypes.bool.isRequired,
-  getPeriods: PropTypes.func.isRequired
+  getPeriods: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
 };
 
 export default connect(
