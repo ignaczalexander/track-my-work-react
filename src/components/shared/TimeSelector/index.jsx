@@ -58,7 +58,7 @@ const TimeSelector = props => {
     //   increaseHour();
     // }
     // newMinute = newMinute < 10 ? '0' + newMinute : newMinute;
-    props.onChange(valueMoment.add(1, 'minutes').format());
+    props.onChange(valueMoment.add(15, 'minutes').format());
 
     // setMinute(newMinute);
   };
@@ -69,7 +69,7 @@ const TimeSelector = props => {
     //   decreaseHour();
     // }
     // newMinute = newMinute < 10 ? '0' + newMinute : newMinute;
-    props.onChange(valueMoment.subtract(1, 'minutes').format());
+    props.onChange(valueMoment.subtract(15, 'minutes').format());
 
     // setMinute(newMinute);
   };
