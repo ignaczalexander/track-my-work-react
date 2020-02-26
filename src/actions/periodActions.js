@@ -15,8 +15,10 @@ import constants from '../constants/index';
 const uuidv1 = require('uuid/v1');
 
 //create period
-export const createPeriod = (periodData, isAuthenticated) => dispatch => {
+export const createPeriod = (periodData) => (dispatch, getState) => {
   dispatch(clearErrors());
+  const isAuthenticated = getState().auth.isAuthenticated
+
   if (isAuthenticated) {
     axios
       .post(`${constants.API_URL}/api/period`, periodData)
@@ -42,14 +44,16 @@ export const createPeriod = (periodData, isAuthenticated) => dispatch => {
 };
 
 //get periods
-export const getPeriods = isAuthenticated => dispatch => {
+export const getPeriods = () => (dispatch, getState) => {
   dispatch(setPostLoading());
+  const isAuthenticated = getState().auth.isAuthenticated
+  
   if (isAuthenticated) {
     axios
       .get(`${constants.API_URL}/api/period`)
       .then(res => dispatch({ type: GET_PERIODS, payload: res.data }))
       .catch(err => dispatch({ type: GET_PERIODS, payload: null }));
-  } else {
+  } else {    
     //get periods from localstorage
     const periods = getPeriodsFromLocalStorage();
     if (periods) {
@@ -62,7 +66,9 @@ export const getPeriods = isAuthenticated => dispatch => {
 };
 
 //get period
-export const getPeriod = (id, isAuthenticated) => dispatch => {
+export const getPeriod = (id) => (dispatch, getState) => {
+  const isAuthenticated = getState().auth.isAuthenticated
+
   if (isAuthenticated) {
     axios
       .get(`${constants.API_URL}/api/period/${id}`)
@@ -101,7 +107,10 @@ export const getPeriod = (id, isAuthenticated) => dispatch => {
 };
 
 //delete period
-export const deletePeriod = (id, isAuthenticated, history) => dispatch => {
+export const deletePeriod = (id, history) => (dispatch, getState) => {
+
+  const isAuthenticated = getState().auth.isAuthenticated
+
   if (isAuthenticated) {
     axios
       .delete(`${constants.API_URL}/api/period/${id}`)
