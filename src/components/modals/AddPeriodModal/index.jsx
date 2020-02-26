@@ -10,12 +10,15 @@ import { createPeriod } from '../../../actions/periodActions';
 import { removeModal } from '../../../actions/modalActions';
 import { ArrowIcon } from '../../shared/Icons';
 import Button from '../../shared/Button';
+
 const AddPeriodModal = props => {
   const [startDate, setStartDate] = useState(new Date());
   const [error, setError] = useState('');
+
   let datePlusOne = new Date();
   datePlusOne.setMonth(datePlusOne.getMonth() + 1);
   const [endDate, setEndDate] = useState(datePlusOne);
+
   const handleStartDateChange = date => {
     const resp = validateDateTimeInput(moment(date), moment(endDate));
     if (!resp.isValid) {
@@ -25,6 +28,7 @@ const AddPeriodModal = props => {
     }
     setStartDate(date);
   };
+
   const handleEndDateChange = date => {
     const resp = validateDateTimeInput(moment(startDate), moment(date));
     if (!resp.isValid) {
@@ -34,6 +38,7 @@ const AddPeriodModal = props => {
     }
     setEndDate(date);
   };
+
   const handleCreatePeriod = () => {
     const periodData = {
       start_date: moment(startDate).format('YYYY-MM-DD'),
@@ -41,6 +46,7 @@ const AddPeriodModal = props => {
     };
     props.createPeriod(periodData);
   };
+
   return (
     <div className={styles.container}>
       <h1>New period</h1>
@@ -89,9 +95,9 @@ const AddPeriodModal = props => {
   );
 };
 
-AddPeriodModal.propTypes = {};
+AddPeriodModal.propTypes = {
+  createPeriod: PropTypes.func.isRequired,
+  removeModal: PropTypes.func.isRequired
+};
 
-export default connect(
-  null,
-  { createPeriod, removeModal }
-)(AddPeriodModal);
+export default connect(null, { createPeriod, removeModal })(AddPeriodModal);
