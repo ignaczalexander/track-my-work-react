@@ -13,10 +13,11 @@ const uuidv1 = require("uuid/v1");
 //create shift
 export const createShift = (
   period_id,
-  shiftData,
-  isAuthenticated
-) => dispatch => {
+  shiftData
+) => (dispatch, getState) => {
   dispatch(clearErrors());
+  const isAuthenticated = getState().auth.isAuthenticated
+
   if (isAuthenticated) {
     axios
       .post(`${constants.API_URL}/api/shift/${period_id}`, shiftData)
@@ -49,9 +50,10 @@ export const createShift = (
 //delete shift
 export const deleteShift = (
   period_id,
-  shift_id,
-  isAuthenticated
-) => dispatch => {
+  shift_id
+) => (dispatch, getState) => {
+  const isAuthenticated = getState().auth.isAuthenticated
+
   if (isAuthenticated) {
     axios
       .delete(`${constants.API_URL}/api/shift/${period_id}/${shift_id}`)
