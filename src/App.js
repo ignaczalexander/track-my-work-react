@@ -39,7 +39,7 @@ class App extends Component {
               {/* <Route exact path="/profile" component={ComingSoon} /> */}
               {/* <PrivateRoute exact path="/periods" component={PeriodsPage} /> */}
               {/* <Route exact path="/periods" component={PeriodsPage} /> */}
-              <PrivateRoute exact path="/period/:id" component={PeriodPage} />
+              <Route exact path="/period/:id" component={PeriodPage} />
               {/* <PrivateRoute exact path="/profile" component={Profile} /> */}
               <Route exact path="/confirm/:token" component={ConfirmEmail} />
               <Redirect to="/" />
