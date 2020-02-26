@@ -13,7 +13,7 @@ The app is deployed to Heroku and can be accessed [here](https://tmwapp.herokuap
 
 ## How to run it locally
 
-First to install all requred npm packages run the followig command in the project directory:
+First to install all required npm packages run the followig command in the project directory:
 
 ### `npm install`
 
