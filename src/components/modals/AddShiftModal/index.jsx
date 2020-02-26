@@ -80,7 +80,7 @@ const AddShiftModal = props => {
       .format('YYYY-MM-DDTHH:mm');
     const hours = moment(end_date).diff(moment(start_date), 'hours', true);
     const shiftData = { start_date, end_date, hours };
-    props.createShift(props.period._id, shiftData, true);
+    props.createShift(props.period._id, shiftData);
   };
   return (
     <div className={styles.container}>

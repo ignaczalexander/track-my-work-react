@@ -39,7 +39,7 @@ const AddPeriodModal = props => {
       start_date: moment(startDate).format('YYYY-MM-DD'),
       end_date: moment(endDate).format('YYYY-MM-DD')
     };
-    props.createPeriod(periodData, true);
+    props.createPeriod(periodData);
   };
   return (
     <div className={styles.container}>
