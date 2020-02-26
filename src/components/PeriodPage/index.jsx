@@ -38,7 +38,7 @@ const PeriodPage = props => {
     props.addModal({
       modalType: 'CONFIRM_MODAL',
       modalProps: {
-        onConfirm: () => props.deletePeriod(periodId, true, props.history),
+        onConfirm: () => props.deletePeriod(periodId, props.history),
         text: 'Delete period?',
         buttonText: 'Delete'
       }
@@ -46,7 +46,7 @@ const PeriodPage = props => {
   };
 
   const handleRemoveShift = shiftId => {
-    props.deleteShift(period._id, shiftId, true);
+    props.deleteShift(period._id, shiftId);
   };
 
   if (!period || Object.keys(period).length === 0) return null;
