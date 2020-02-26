@@ -5,10 +5,9 @@ import { addModal } from '../../actions/modalActions';
 import styles from './periods-page.module.scss';
 import PeriodsList from './PeriodsList';
 import Button from '../shared/Button';
-import { PlusIcon, ChevronIcon } from '../shared/Icons';
+import { PlusIcon } from '../shared/Icons';
 
 const PeriodsPage = props => {
-
   const handleOnAddClick = () => {
     props.addModal({ modalType: 'ADD_PERIOD_MODAL' });
   };
@@ -27,11 +26,11 @@ const PeriodsPage = props => {
   );
 };
 
-PeriodsPage.propTypes = {};
+PeriodsPage.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+  addModal: PropTypes.func.isRequired
+};
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 });
-export default connect(
-  mapStateToProps,
-  { addModal }
-)(PeriodsPage);
+export default connect(mapStateToProps, { addModal })(PeriodsPage);
