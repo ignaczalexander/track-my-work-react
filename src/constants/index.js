@@ -6,5 +6,6 @@ export default {
   API_URL:
     process.env.NODE_ENV === 'production'
       ? "https://track-my-work-server.herokuapp.com"
-      : `http://localhost:5000`
+      // : `http://localhost:5000`
+      : "https://track-my-work-server.herokuapp.com"
 };
