@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Modal from 'react-modal';
 import './App.scss';
 
 import LoginPage from './components/LoginPage';
-import ComingSoon from './components/common/ComingSoon';
-import Profile from './components/profile/Profile';
+// import ComingSoon from './components/common/ComingSoon';
+// import Profile from './components/profile/Profile';
 import store from './store';
-import PrivateRoute from './components/common/PrivateRoute';
+// import PrivateRoute from './components/common/PrivateRoute';
 import ConfirmEmail from './components/auth/ConfirmEmail';
 import Header from './components/Header';
 import ModalContainer from './components/ModalContainer';
@@ -25,7 +20,6 @@ import RegisterPage from './components/RegisterPage';
 checkAuthToken();
 Modal.setAppElement('#root');
 class App extends Component {
-  
   render() {
     return (
       <Provider store={store}>
