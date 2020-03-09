@@ -10,6 +10,7 @@ The app is deployed to Heroku and can be accessed [here](https://tmwapp.herokuap
 * JWT authentication
 * SCSS styles
 * Moment for date/time management
+* Data fetching from the [TrackMyWork API](https://github.com/ignaczalexander/track-my-work-api)
 
 ## How to run it locally
 
