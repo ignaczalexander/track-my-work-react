@@ -52,7 +52,7 @@ export const getPeriods = () => (dispatch, getState) => {
     axios
       .get(`${constants.API_URL}/api/period`)
       .then(res => dispatch({ type: GET_PERIODS, payload: res.data }))
-      .catch(err => dispatch({ type: GET_PERIODS, payload: null }));
+      .catch(() => dispatch({ type: GET_PERIODS, payload: null }));
   } else {    
     //get periods from localstorage
     const periods = getPeriodsFromLocalStorage();
@@ -79,7 +79,7 @@ export const getPeriod = (id) => (dispatch, getState) => {
         });
         dispatch({ type: MODAL_REMOVE_COMPONENT });
       })
-      .catch(err => dispatch({ type: GET_PERIOD, payload: {} }));
+      .catch(() => dispatch({ type: GET_PERIOD, payload: {} }));
   } else {
     const periods = getPeriodsFromLocalStorage();
     if (periods) {
@@ -114,7 +114,7 @@ export const deletePeriod = (id, history) => (dispatch, getState) => {
   if (isAuthenticated) {
     axios
       .delete(`${constants.API_URL}/api/period/${id}`)
-      .then(res => {
+      .then(() => {
         dispatch({ type: DELETE_PERIOD, payload: id });
         history.push('/periods');
       })
