@@ -23,7 +23,7 @@ function IconContainer(props) {
         style={{
           fill: props.fill,
           stroke: props.stroke,
-          strokeMiterlimit: 10
+          strokeMiterlimit: 10,
         }}
         d={props.path}
       />
@@ -35,7 +35,7 @@ IconContainer.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
   className: PropTypes.string,
-  path: PropTypes.string
+  path: PropTypes.string,
 };
 IconContainer.defaultProps = {
   width: '14px',
@@ -46,7 +46,7 @@ IconContainer.defaultProps = {
   path: '',
   className: '',
   hoverColor: '',
-  color: ''
+  color: '',
 };
 export const StarIcon = props => {
   return (
@@ -98,7 +98,7 @@ export const SearchIcon = props => {
     />
   );
 };
-export const ChevronIcon = props => {
+export const EllipsisIcon = props => {
   return (
     <IconContainer
       {...props}
@@ -109,6 +109,17 @@ export const ChevronIcon = props => {
   );
 };
 export const ArrowIcon = props => {
+  return (
+    <IconContainer
+      {...props}
+      path="M45.8,25.7L29.6,42c-0.4,0.4-1,0.4-1.4,0l-1.4-1.4c-0.4-0.4-0.4-1,0-1.4L38.9,27H6c-0.6,0-1-0.5-1-1v-2
+	c0-0.6,0.5-1,1-1h32.9L26.8,10.9c-0.4-0.4-0.4-1,0-1.4L28.2,8c0.4-0.4,1-0.4,1.4,0l14.8,14.8l1.4,1.4C46.2,24.7,46.2,25.3,45.8,25.7
+	z"
+    />
+  );
+};
+
+export const ChevronIcon = props => {
   return (
     <IconContainer
       {...props}

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './drow-down.module.scss';
-import { ChevronIcon } from '../Icons';
+import { EllipsisIcon } from '../Icons';
 import Button from '../Button';
 
 const DropDownMenu = props => {
@@ -24,7 +24,7 @@ const DropDownMenu = props => {
       onClick={() => setDropDownOpen(!dropDownOpen)}
       className={styles.container}
     >
-      <ChevronIcon className={styles.icon_chevron} size="16px" />
+      <EllipsisIcon className={styles.icon_chevron} size="16px" />
       {dropDownOpen && <div className={styles.dropDown}>{props.children}</div>}
     </div>
   );
