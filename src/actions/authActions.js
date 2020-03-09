@@ -11,11 +11,11 @@ import jwt_decode from 'jwt-decode';
 import constants from '../constants/index';
 
 //register
-export const registerUser = (userData, history) => dispatch => {
+export const registerUser = (userData) => dispatch => {
   clearErrors();
   axios
     .post(`${constants.API_URL}/api/users/register`, userData)
-    .then(res =>
+    .then(() =>
       //redirect to email sent
       dispatch({ type: EMAIL_SENT })
     )
@@ -40,7 +40,6 @@ export const loginUser = userData => dispatch => {
       //
     })
     .catch(err => {
-      console.log('error', err);
       if(err.response){
          dispatch({ type: GET_ERRORS, payload: err.response.data })
         }
@@ -82,11 +81,10 @@ export const logoutUser = () => dispatch => {
 export const confirmEmail = token => dispatch => {
   axios
     .get(`${constants.API_URL}/api/users/confirm/${token}`)
-    .then(res => {
+    .then(() => {
       dispatch({ type: CONFIRM_SUCCESSFUL, payload: {} });
     })
     .catch(err => {
-      console.log(err.response);
       dispatch({ type: GET_ERRORS, payload: err.response.data });
     });
 };
@@ -114,7 +112,7 @@ export const setName = newName => dispatch => {
 //change password
 export const changePassword = passData => {
   return dispatch =>
-    new Promise((resolve, reject) => {
+    new Promise((resolve) => {
       dispatch(clearErrors());
 
       axios
