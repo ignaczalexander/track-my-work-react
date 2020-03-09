@@ -57,7 +57,7 @@ export const deleteShift = (
   if (isAuthenticated) {
     axios
       .delete(`${constants.API_URL}/api/shift/${period_id}/${shift_id}`)
-      .then(res =>
+      .then(() =>
         dispatch({ type: DELETE_SHIFT, payload: { period_id, shift_id } })
       )
       .catch(err => dispatch({ type: GET_ERRORS, payload: err.response.data }));
