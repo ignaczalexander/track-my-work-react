@@ -65,7 +65,8 @@ function ModalContainer(props) {
   );
 }
 ModalContainer.propTypes = {
-  component: PropTypes.element
+  component: PropTypes.element,
+  removeModal: PropTypes.func.isRequired,
 };
 ModalContainer.defaultProps = {
   component: null
